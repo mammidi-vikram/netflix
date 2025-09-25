@@ -3,11 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css'; // This is the default CRA CSS
 import './styles/global.css'; // Add this line
-import App from './App';
 import ErrorBoundary from './components/ErrorBoundary';
 import reportWebVitals from './reportWebVitals';
 
@@ -91,4 +87,5 @@ root.render(
   <React.StrictMode>
     <AppWithErrorBoundary />
   </React.StrictMode>
+
 );
