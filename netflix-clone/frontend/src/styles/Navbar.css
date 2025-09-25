@@ -1,0 +1,249 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 70px;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  transition: background-color 0.3s ease;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.navbar.scrolled {
+  background: rgba(0, 0, 0, 0.95);
+}
+
+.navbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 24px;
+  font-weight: 300;
+  color: #e50914;
+  text-decoration: none;
+  font-family: 'Netflix Sans', sans-serif;
+}
+
+.logo i {
+  font-size: 32px;
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  list-style: none;
+}
+
+.nav-item {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 5px 10px;
+  border-radius: 4px;
+  transition: color 0.2s ease, background 0.2s ease;
+  position: relative;
+}
+
+.nav-item:hover {
+  color: #e50914;
+}
+
+.nav-item.active {
+  color: #e50914;
+}
+
+.nav-item.active::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 2px;
+  background: #e50914;
+}
+
+.search-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.search-input {
+  padding: 8px 12px;
+  border: 1px solid #333;
+  border-radius: 4px;
+  background: #232f3e;
+  color: #ffffff;
+  font-size: 14px;
+  width: 250px;
+  transition: border-color 0.2s ease;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #e50914;
+}
+
+.search-input::placeholder {
+  color: #999;
+}
+
+.search-btn {
+  background: #e50914;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.2s ease;
+}
+
+.search-btn:hover {
+  background: #f40612;
+}
+
+.user-menu {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.profile-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #e50914, #f40612);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+}
+
+.auth-btn {
+  background: transparent;
+  color: #ffffff;
+  border: 1px solid #333;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.auth-btn:hover {
+  border-color: #e50914;
+  color: #e50914;
+}
+
+.logout-btn {
+  background: #e50914;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.logout-btn:hover {
+  background: #f40612;
+}
+
+/* Mobile Menu */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 4px;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: #ffffff;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.mobile-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.95);
+  flex-direction: column;
+  padding: 20px;
+  gap: 10px;
+}
+
+.mobile-menu.active {
+  display: flex;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navbar-container {
+    padding: 0 15px;
+  }
+  
+  .nav-menu {
+    display: none;
+  }
+  
+  .hamburger {
+    display: flex;
+  }
+  
+  .search-container {
+    order: -1;
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  
+  .search-input {
+    width: 100%;
+    max-width: none;
+  }
+  
+  .user-menu {
+    order: 1;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    font-size: 20px;
+  }
+  
+  .logo i {
+    font-size: 28px;
+  }
+  
+  .search-input {
+    font-size: 16px; /* Prevents zoom on iOS */
+  }
+}
