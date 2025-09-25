@@ -5,7 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import './styles/global.css'; // Add this line
 import ErrorBoundary from './components/ErrorBoundary';
-import reportWebVitals from './reportWebVitals';
+
 
 // ... rest of your index.js code
 
@@ -89,3 +89,4 @@ root.render(
   </React.StrictMode>
 
 );
+
